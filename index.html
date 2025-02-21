@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Ballast Water Treatment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Home Dashboard -->
+    <section id="dashboard">
+        <h1>Smart Ballast Water Treatment System</h1>
+        <h2>Enter Data for Graphs</h2>
+
+        <!-- User Input for Graph Data -->
+        <label>Salinity Levels (comma-separated): </label>
+        <input type="text" id="salinityData" placeholder="30,32,31,29,28"><br>
+    
+        <label>pH Levels (comma-separated): </label>
+        <input type="text" id="phData" placeholder="7.2,7.1,7.3,7.4,7.0"><br>
+    
+        <label>Bacteria Levels (comma-separated): </label>
+        <input type="text" id="bacteriaData" placeholder="200,180,190,210,230"><br>
+    
+        <label>Water Temperature (comma-separated): </label>
+        <input type="text" id="temperatureData" placeholder="18,20,19,21,22"><br>
+    
+        <!-- Button to generate graphs -->
+        <button onclick="updateCharts()">Generate Graphs</button>
+    
+        <h2>Live Monitoring Graphs</h2>
+    
+        <div class="chart-container">
+            <canvas id="salinityChart"></canvas>
+            <canvas id="phChart"></canvas>
+            <canvas id="bacteriaChart"></canvas>
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Ballast Water Filtration -->
+    <section id="filtration">
+        <h2>Ballast Water Filtration</h2>
+        <label class="switch">
+            <input type="checkbox" id="microFilterToggle">
+            <span class="slider round"></span>
+        </label>
+        <p id="filterStatus">Micro-Filter: OFF</p>
+    </section>
+
+    <!-- Energy Generation & Power Balance -->
+    <h1>Turbine Power Generation</h1>
+    
+    <div class="container">
+        <div class="status">Turbine Status: <span id="turbineStatus" style="color:red;">OFF</span></div>
+        <div class="status">Turbine Speed (RPM): <span id="turbineSpeed">0</span></div>
+        <div class="status">Current Power Output (kW): <span id="currentPower">0</span></div>
+        <div class="status">Total Energy Generated (kWh): <span id="totalPower">0</span></div>
+
+        <button onclick="startTurbine()">Start Turbine</button>
+        <button onclick="stopTurbine()">Stop Turbine</button>
+    </div>
+    <script src="turbine.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts.js"></script>
+
+</body>
+</html>
