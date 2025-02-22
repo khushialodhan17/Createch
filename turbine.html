@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbine Power Generation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Turbine Power Generation</h1>
+    
+    <div class="container">
+        <div class="status">Turbine Status: <span id="turbineStatus" style="color:red;">OFF</span></div>
+        <div class="status">Turbine Speed (RPM): <span id="turbineSpeed">0</span></div>
+        <div class="status">Current Power Output (kW): <span id="currentPower">0</span></div>
+        <div class="status">Total Energy Generated (kWh): <span id="totalPower">0</span></div>
+
+        <button onclick="startTurbine()">Start Turbine</button>
+        <button onclick="stopTurbine()">Stop Turbine</button>
+    </div>
+    <script src="turbine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

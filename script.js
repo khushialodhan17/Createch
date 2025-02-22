@@ -8,3 +8,15 @@ document.getElementById("microFilterToggle").addEventListener("change", function
     }
 });
 
+const slider = document.querySelector('.slider');
+let isPaused = false;
+
+document.querySelector('.slider-container').addEventListener('mouseenter', () => {
+    isPaused = true;
+    slider.style.animationPlayState = 'paused';
+});
+
+document.querySelector('.slider-container').addEventListener('mouseleave', () => {
+    isPaused = false;
+    slider.style.animationPlayState = 'running';
+});

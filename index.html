@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Ballast Water Treatment</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -48,19 +49,6 @@
         </label>
         <p id="filterStatus">Micro-Filter: OFF</p>
     </section>
-
-    <!-- Energy Generation & Power Balance -->
-    <h1>Turbine Power Generation</h1>
-    
-    <div class="container">
-        <div class="status">Turbine Status: <span id="turbineStatus" style="color:red;">OFF</span></div>
-        <div class="status">Turbine Speed (RPM): <span id="turbineSpeed">0</span></div>
-        <div class="status">Current Power Output (kW): <span id="currentPower">0</span></div>
-        <div class="status">Total Energy Generated (kWh): <span id="totalPower">0</span></div>
-
-        <button onclick="startTurbine()">Start Turbine</button>
-        <button onclick="stopTurbine()">Stop Turbine</button>
-    </div>
     <script src="turbine.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Buoy Pollution Monitoring</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        canvas {
+            width: 100% !important;
+            max-height: 300px;
+        }
+        .alert-box {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌊 Real-Time Water Pollution Monitoring</h2>
+        <p>Tracking contamination levels using solar-powered smart buoys.</p>
+        <canvas id="pollutionChart"></canvas>
+        <div id="alert" class="alert-box">⚠️ High Pollution Levels Detected! Immediate Action Required! ⚠️</div>
+    </div>
+    <script>
+        let pollutionData = [10, 12, 15, 20, 25, 22, 18, 30];
+        let labels = ["00:00", "00:10", "00:20", "00:30", "00:40", "00:50", "01:00", "01:10"];
+        let ctx = document.getElementById("pollutionChart").getContext("2d");
+        let pollutionChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Pollution Levels (PPM)",
+                    data: pollutionData,
+                    borderColor: "red",
+                    backgroundColor: "rgba(255, 0, 0, 0.2)",
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }
+            }
+        });
+        function updatePollutionData() {
+            let newPollutionLevel = Math.floor(Math.random() * 50); 
+            pollutionData.push(newPollutionLevel);
+            pollutionData.shift();
+            pollutionChart.update();
+            
+            if (newPollutionLevel > 35) {
+                document.getElementById("alert").style.display = "block";
+                playAlertSound();
+            } else {
+                document.getElementById("alert").style.display = "none";
+            }
+        }
+        function playAlertSound() {
+            let audio = new Audio("https://www.soundjay.com/button/beep-07.wav");
+            audio.play();
+        }
+        setInterval(updatePollutionData, 3000); // Update every 3 seconds
+    </script>
+</body>
+</html>

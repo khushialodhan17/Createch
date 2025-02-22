@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Monitoring Navbar</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(output-onlinepngtools.png);
+            
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #002b5c;
+            padding: 5px 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 7px 12px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #00509e;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: #80c7ff;
+            font-size: 24px;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+            .navbar a {
+                display: none;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .navbar.active a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <a href="#home"><img src="home2.png" alt="Home" style="width:60px; height:60px; border-radius: 55px;"></a>
+        <a href="#about">About Us</a>
+        <a href="solarbuoytrack.html">SolarBuoyTrack</a>
+        <a href="index.html">Ballast Water Treatment</a>
+        <a href="turbine.html">Turbine Power Generation</a>
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".navbar").classList.toggle("active");
+        }
+    </script>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
