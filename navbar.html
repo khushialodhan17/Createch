@@ -9,17 +9,21 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-image: url(output-onlinepngtools.png);
-            
         }
         .navbar {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             background-color: #002b5c;
-            padding: 5px 0;
+            padding: 10px 20px;
+            position: relative;
             z-index: 100;
         }
-        .navbar a {
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-menu a {
             color: white;
             text-decoration: none;
             font-size: 18px;
@@ -27,7 +31,7 @@
             padding: 7px 12px;
             transition: 0.3s;
         }
-        .navbar a:hover {
+        .nav-menu a:hover {
             background-color: #00509e;
             color: #ffffff;
             border-radius: 5px;
@@ -35,65 +39,54 @@
         .menu-toggle {
             display: none;
             cursor: pointer;
-            color: #80c7ff;
             font-size: 24px;
+            color: #80c7ff;
         }
+        
+        /* Responsive Menu */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
+            .menu-toggle {
+                display: block;
             }
-            .navbar a {
+            .nav-menu {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
                 width: 100%;
-                text-align: left;
-                padding: 10px;
+                background-color: #002b5c;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                padding: 10px 0;
             }
-            /* .menu-toggle {
+            .nav-menu a {
                 display: block;
-            } */
-            .navbar.active a {
-                display: block;
+                padding: 12px 20px;
+            }
+            .nav-menu.active {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
+        <a href="index.html">
+            <img src="home2.png" alt="Home" style="width:60px; height:60px; border-radius: 55px;">
+        </a>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <a href="index.html"><img src="home2.png" alt="Home" style="width:60px; height:60px; border-radius: 55px;"></a>
-        <a href="#about-us">About Us</a>
-        <a href="solarbuoytrack.html">SolarBuoyTrack</a>
-        <a href="ballast.html">Ballast Water Treatment</a>
-        <a href="turbine.html">Turbine Power Generation</a>
+        <div class="nav-menu">
+            <a href="#about-us">About Us</a>
+            <a href="solarbuoytrack.html">SolarBuoyTrack</a>
+            <a href="ballast.html">Ballast Water Treatment</a>
+            <a href="turbine.html">Turbine Power Generation</a>
+        </div>
     </nav>
+
     <script>
         function toggleMenu() {
-            document.querySelector(".navbar").classList.toggle("active");
+            document.querySelector(".nav-menu").classList.toggle("active");
         }
     </script>
-    <script>
-        function toggleMenu() {
-            let navbar = document.querySelector(".navbar");
-            let links = document.querySelectorAll(".navbar a");
-    
-            navbar.classList.toggle("active");
-    
-            // Show or hide links on toggle
-            links.forEach(link => {
-                if (navbar.classList.contains("active")) {
-                    link.style.display = "block";
-                } else {
-                    link.style.display = "none";
-                }
-            });
-        }
-    </script>
-    
-
-    
-
-    <script src="script.js"></script>
 </body>
 </html>
