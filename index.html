@@ -6,14 +6,20 @@
     <title>SMART MARITIME</title>
 </head>
 <body>
-    <div id="navbar-container"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-    </script>
+    <div id="navbar-container"></div> 
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+            
+            // Manually re-run the script after inserting navbar
+            let script = document.createElement('script');
+            script.src = 'navbar.js'; // Separate JS file for navbar functionality
+            document.body.appendChild(script);
+        });
+</script>
+
 
     <!-- heading -->
     <h1 class="smart-maritime">Smart Maritime</h1>

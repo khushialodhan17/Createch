@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar-container"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-    </script>
+    <div id="navbar-container"></div> 
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+            
+            // Manually re-run the script after inserting navbar
+            let script = document.createElement('script');
+            script.src = 'navbar.js'; // Separate JS file for navbar functionality
+            document.body.appendChild(script);
+        });
+</script>
 
-    <h1>Turbine Power Generation</h1>
+
+    <h1 style="color: white; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Turbine Power Generation</h1>
     
     <div class="container">
         <div class="status">Turbine Status: <span id="turbineStatus" style="color:red;">OFF</span></div>
