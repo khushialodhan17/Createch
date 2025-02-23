@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
     <h1>Turbine Power Generation</h1>
     
     <div class="container">
@@ -20,6 +29,10 @@
     </div>
     <script src="turbine.js"></script>
     <script src="script.js"></script>
+    
+
+
+
 </body>
 </html>
 

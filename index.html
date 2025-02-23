@@ -3,79 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Monitoring Navbar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url(output-onlinepngtools.png);
-            
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #002b5c;
-            padding: 5px 0;
-            z-index: 100;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 7px 12px;
-            transition: 0.3s;
-        }
-        .navbar a:hover {
-            background-color: #00509e;
-            color: #ffffff;
-            border-radius: 5px;
-        }
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            color: #80c7ff;
-            font-size: 24px;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
-            }
-            .navbar a {
-                display: none;
-                width: 100%;
-                text-align: left;
-                padding: 10px;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .navbar.active a {
-                display: block;
-            }
-        }
-    </style>
+    <title>SMART MARITIME</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <a href="#home"><img src="home2.png" alt="Home" style="width:60px; height:60px; border-radius: 55px;"></a>
-        <a href="#about">About Us</a>
-        <a href="solarbuoytrack.html">SolarBuoyTrack</a>
-        <a href="index.html">Ballast Water Treatment</a>
-        <a href="turbine.html">Turbine Power Generation</a>
-    </nav>
+    <div id="navbar-container"></div>
     <script>
-        function toggleMenu() {
-            document.querySelector(".navbar").classList.toggle("active");
-        }
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
     </script>
 
+    <!-- Infinite Scroll -->
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <img src="infinite1.jpg" alt="Image 1">
+            <img src="infinite2.jpg" alt="Image 2">
+            <img src="port4.jpg" alt="Image 3">
+            <img src="infinite3.jpg" alt="Image 4">
+            <img src="imfinite4.jpg" alt="Image 5">
+            <img src="infinite5.jpg" alt="Image 6">
+            <img src="port2.jpg" alt="Image 4">
+            <img src="Port1.jpg" alt="Image 5">
+            <img src="portback.webp" alt="Image 6">
+            <!-- Duplicate for seamless looping -->
+            <img src="infinite1.jpg" alt="Image 1">
+            <img src="infinite2.jpg" alt="Image 2">
+            <img src="port4.jpg" alt="Image 3">
+            <img src="infinite3.jpg" alt="Image 4">
+            <img src="imfinite4.jpg" alt="Image 5">
+            <img src="infinite5.jpg" alt="Image 6">
+            <img src="port2.jpg" alt="Image 4">
+            <img src="Port1.jpg" alt="Image 5">
+            <img src="portback.webp" alt="Image 6">
+            <!-- Duplicate for seamless looping -->
+            <img src="infinite1.jpg" alt="Image 1">
+            <img src="infinite2.jpg" alt="Image 2">
+            <img src="port4.jpg" alt="Image 3">
+            <img src="infinite3.jpg" alt="Image 4">
+            <img src="imfinite4.jpg" alt="Image 5">
+            <img src="infinite5.jpg" alt="Image 6">
+            <img src="port2.jpg" alt="Image 4">
+            <img src="Port1.jpg" alt="Image 5">
+            <img src="portback.webp" alt="Image 6">
+            <!-- Duplicate for seamless looping -->
+            <img src="infinite1.jpg" alt="Image 1">
+            <img src="infinite2.jpg" alt="Image 2">
+            <img src="port4.jpg" alt="Image 3">
+            <img src="infinite3.jpg" alt="Image 4">
+            <img src="imfinite4.jpg" alt="Image 5">
+            <img src="infinite5.jpg" alt="Image 6">
+            <img src="port2.jpg" alt="Image 4">
+            <img src="Port1.jpg" alt="Image 5">
+            <img src="portback.webp" alt="Image 6">
+            
+        </div>
+    </div>
     
+    <style>
+    .scroll-container {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        background: black;
+        padding: 25px 0;
+    }
+    .scroll-content {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        animation: scroll 15s linear infinite;
+    }
+    .scroll-content img {
+        width: 305px; /* Adjust as needed */
+        height: 255px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+    </style>
 
-    <script src="script.js"></script>
+
+    <!-- About us -->
+    <section id="about-us" class="about-section">
+        <div class="about-container">
+            <h2 class="about-heading">About Us - Smart Maritime Solutions</h2>
+            <div class="about-content">
+                <div class="about-box">
+                    <div class="card-front">
+                        <h3>🌊 Intelligent Ballast Water Treatment</h3>
+                        <p>Ensuring ships discharge clean, compliant water while minimizing environmental impact.</p>
+                        <p class="hover-text">Hover to know more!</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>🌊 Intelligent Ballast Water Treatment</h3>
+                        <p>🔹 <strong>Micro-Filtration Technology –</strong> Removes large contaminants like marine organisms and sediments before water enters the ballast system. <br>🔹 <strong>Electric Shock / Thermal Sterilization –</strong> Eliminates harmful pathogens without chemical treatment, reducing secondary pollution risks.<br>🔹 <strong>Energy-Efficient Operations –</strong> Integrated with onboard turbines to recover and utilize energy from water flow.</p>
+                    </div>
+                </div>
+                <div class="about-box">
+                    <div class="card-front">
+                        <h3>⚡ Turbine-Integrated Energy Recovery</h3>
+                        <p>Harnessing onboard water flow to generate electricity, reducing dependency on fossil fuels.</p>
+                        <p class="hover-text">Hover to know more!</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>⚡ Turbine-Integrated Energy Recovery</h3>
+                        <p>🔹 <strong>Dual Functionality –</strong> Converts kinetic energy from water flow into electricity for onboard usage.<br>🔹<strong> Sustainable Power Generation –</strong> Reduces dependency on fossil fuels, cutting carbon emissions.<br>🔹 <strong>Renewable Integration –</strong> Works alongside solar and wind systems to optimize energy use.</p>
+                    </div>
+                </div>
+                <div class="about-box">
+                    <div class="card-front">
+                        <h3>🌍 Breakwater Turbines for Coastal Energy</h3>
+                        <p>Installing turbines along breakwaters to harness wave energy and power port facilities.</p>
+                        <p class="hover-text">Hover to know more!</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>🌍 Breakwater Turbines for Coastal Energy</h3>
+                        <p>🔹 <strong>Eco-Friendly Electricity –</strong> Utilizes ocean waves to generate sustainable energy for coastal areas. <br>🔹 <strong>Dual Purpose Infrastructure –</strong> Enhances breakwater stability while producing renewable energy.<br>🔹 <strong>Resilient Power Supply –</strong> Provides reliable power even in harsh maritime conditions.</p>
+                    </div>
+                </div>
+                <div class="about-box">
+                    <div class="card-front">
+                        <h3>🛁 Solar-Powered Smart Buoys</h3>
+                        <p>A real-time water pollution monitoring system using IoT-enabled smart buoys.</p>
+                        <p class="hover-text">Hover to know more!</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>🛁 Solar-Powered Smart Buoys</h3>
+                        <p>🔹 <strong>Live Pollution Tracking –</strong> Continuously monitors water quality in real-time using IoT sensors. <br>🔹 <strong>Automated Alerts –</strong> Notifies authorities instantly in case of contamination or oil spills.<br>🔹 <strong>Cost-Effective & Scalable –</strong> Affordable solution adaptable to various marine environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    .about-section {
+        background: linear-gradient(to right, #0a1931, #1b3b6f);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    .about-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        animation: fadeInDown 1s ease-in-out;
+    }
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+    }
+    .about-box {
+        position: relative;
+        width: 320px;
+        height: 220px;
+        perspective: 1000px;
+    }
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.8s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+    .card-front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    .card-back {
+        transform: rotateY(180deg);
+    }
+    .about-box:hover .card-front {
+        transform: rotateY(-180deg);
+    }
+    .about-box:hover .card-back {
+        transform: rotateY(0deg);
+    }
+    .hover-text {
+        margin-top: 10px;
+        color: #ffcc00;
+        font-weight: bold;
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+    
 </body>
 </html>

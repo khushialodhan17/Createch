@@ -41,6 +41,16 @@
     </style>
 </head>
 <body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+
     <div class="container">
         <h2>🌊 Real-Time Water Pollution Monitoring</h2>
         <p>Tracking contamination levels using solar-powered smart buoys.</p>
