@@ -214,6 +214,148 @@
         to { opacity: 1; transform: translateY(0); }
     }
     </style>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-subscribe">
+                <input type="email" placeholder="Your e-mail">
+                <button>Send!</button>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="solarbuoytrack.html">SolarBuoyTrack</a></li>
+                        <li><a href="ballast.html">Ballast Water Treatment</a></li>
+                        <li><a href="turbine.html">Turbine Power Generation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column team-column">
+                    <h3>Our Team</h3>
+                    <p>Khushi Alodhan</p>
+                    <p>Arpita</p>
+                    <p>Kavya Chaudhari</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@yourwebsite.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Location: City, Country</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+    .footer {
+        background-color: #04074b;
+        color: white;
+        padding: 40px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .footer:hover {
+        background-color: #0b0e58;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .footer-subscribe {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .footer-subscribe input {
+        padding: 10px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        width: 250px;
+    }
+    .footer-subscribe button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #ff69b4;
+        color: white;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .footer-subscribe button:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 5px 10px rgba(255, 105, 180, 0.5);
+    }
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .footer-column h3 {
+        margin-bottom: 10px;
+        border-bottom: 2px solid white;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-column ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .footer-column ul li a:hover {
+        color: #ff69b4;
+        text-shadow: 0px 0px 10px rgba(255, 105, 180, 0.8);
+    }
+    .team-column p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    }
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid white;
+        padding-top: 10px;
+        margin-top: 20px;
+    }
+    .social-icons a {
+        color: white;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+        transform: rotate(10deg) scale(1.2);
+        color: #ff69b4;
+        text-shadow: 0px 0px 10px rgba(255, 105, 180, 0.8);
+    }
+    </style>
+    
     
 </body>
 </html>
